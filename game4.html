@@ -1,17 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Game 1</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+    .container {
+      background: white;
+      max-width: 480px;
+      width: 90%;
+      padding: 30px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 15px;
+      font-size: 2.2em;
+      color: #222;
+    }
+    img.game-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    p.description {
+      font-size: 1.1em;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      color: #555;
+    }
+    button.launch-btn {
+      background-color: #0078d7;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button.launch-btn:hover {
+      background-color: #005ea2;
+    }
+  </style>
 </head>
 <body>
-  <h1>Game 1</h1>
-  <p>Click the button below to launch the game.</p>
-  <button onclick="launchGame()">Launch Game</button>
+  <div class="container">
+    <h1>Game 1</h1>
+    <img
+      class="game-image"
+      src="https://via.placeholder.com/400x200.png?text=Game+1+Image"
+      alt="Game 1 Screenshot"
+    />
+    <p class="description">
+      Dive into the exciting world of Game 1! Explore new adventures, conquer challenges, and enjoy hours of fun.
+    </p>
+    <button class="launch-btn" onclick="launchGame()">Launch Game</button>
+  </div>
 
   <script>
     function launchGame() {
-      window.location.href = "game1://launch"; // This must be registered to open Game.exe
-      // Optional fallback
+      window.location.href = "game1://launch";
       setTimeout(() => {
         alert("If the game didn't open, please make sure it is installed and registered with 'game1://' protocol.");
       }, 1000);
