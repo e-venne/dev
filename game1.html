@@ -5,20 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Game 1</title>
   <style>
-    /* Reset some default margin/padding */
     * {
       box-sizing: border-box;
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f2f5;
+      background-color: #888888; /* grey background */
       margin: 0;
       padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       min-height: 100vh;
       color: #222;
+      position: relative;
+    }
+    .home-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #0078d7;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 18px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .home-btn:hover {
+      background-color: #005ea2;
     }
     .container {
       background-color: white;
@@ -27,6 +46,7 @@
       max-width: 480px;
       width: 100%;
       padding: 25px;
+      margin: 80px auto 0; /* pushed down so home button doesn't overlap */
       text-align: center;
     }
     h1 {
@@ -64,6 +84,8 @@
   </style>
 </head>
 <body>
+  <a href="index.html" class="home-btn" title="Back to Home">Home</a>
+
   <div class="container">
     <h1>Game 1</h1>
     <img
@@ -80,9 +102,6 @@
   <script>
     function launchGame() {
       window.location.href = "game1://launch";
-      setTimeout(() => {
-        alert("If the game didn't open, please make sure it is installed and registered with 'game1://' protocol.");
-      }, 1000);
     }
   </script>
 </body>
