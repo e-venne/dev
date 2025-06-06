@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game 1</title>
+</head>
+<body>
+  <h1>Game 1</h1>
+  <p>Click the button below to launch the game.</p>
+  <button onclick="launchGame()">Launch Game</button>
+
+  <script>
+    function launchGame() {
+      window.location.href = "game1://launch"; // This must be registered to open Game.exe
+      // Optional fallback
+      setTimeout(() => {
+        alert("If the game didn't open, please make sure it is installed and registered with 'game1://' protocol.");
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
